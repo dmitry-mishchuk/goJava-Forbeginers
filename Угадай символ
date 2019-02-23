@@ -2,26 +2,31 @@ import java.io.IOException;
 import java.util.Random;
 
 public class Shifr {
+    public static void main(String[] args)throws IOException {
 
-    public static void main(String[] args) throws IOException {
-        char answer;
+        char answer,simvol;
+        boolean swich = true;
+
         if(Math.random() > 0.5){
-            answer = (char) (new Random().nextInt(26)+65);
+            answer = (char) (new Random().nextInt(26) + 65);
         }
         else {
             answer = (char) (new Random().nextInt(26) + 97);
         }
-       // System.out.println(answer);
 
+        System.out.println("Это игра угадай символ");
+            while (swich) {
+                System.out.print("Введите символ: ");
+                simvol = (char) System.in.read();
+                System.in.read();
 
-        char ch;
-        System.out.println("Угадай символ");
-        ch = (char)System.in.read();
-        if (ch == answer) {
-            System.out.println("Ура Вы угадали, это " + ch);
-        }
-        else {
-            System.out.println("Не угадал");
-        }
+                if (simvol == answer) {
+                    System.out.println("Ура, ты угадал, правильный ответ " + simvol);
+                    swich = false;
+                }
+                else {
+                    System.out.println("Ты не угадал, попробуй еще!!!");
+                }
+            }
     }
 }
