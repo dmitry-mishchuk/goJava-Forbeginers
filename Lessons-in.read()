@@ -1,0 +1,41 @@
+import java.io.IOException;
+
+/**
+ * Created by Y510P on 22.02.2019.
+ */
+public class Main1 {
+
+    public static void main(String[] args) throws IOException {
+        char i, ignore;
+        do {
+            System.out.println("Справка по циклам");
+            System.out.println("1. for");
+            System.out.println("2. while");
+            System.out.println("3. do...while");
+            System.out.println("Выберите пункт справки");
+            i = (char) System.in.read();
+            do {
+                ignore = (char) System.in.read();
+            } while (ignore != '\n');
+        }while (i < '1' | i > '3');
+
+            switch (i) {
+                case '1': {
+                    System.out.println("for(условие выполнение цикла)\n{тело цикла}");
+                    break;
+                }
+                case '2': {
+                    System.out.println("while(условие выполнение цикла)\n{тело цикла}");
+                    break;
+                }
+                case '3': {
+                    System.out.println("do {тело цикла}while(условие выполнение цикла)");
+                    break;
+                }
+                default:
+                    System.out.println("Вы не правльно ввели число");
+            }
+
+
+    }
+}
