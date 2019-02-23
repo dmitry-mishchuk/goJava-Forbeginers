@@ -1,0 +1,27 @@
+import java.io.IOException;
+import java.util.Random;
+
+public class Shifr {
+
+    public static void main(String[] args) throws IOException {
+        char answer;
+        if(Math.random() > 0.5){
+            answer = (char) (new Random().nextInt(26)+65);
+        }
+        else {
+            answer = (char) (new Random().nextInt(26) + 97);
+        }
+       // System.out.println(answer);
+
+
+        char ch;
+        System.out.println("Угадай символ");
+        ch = (char)System.in.read();
+        if (ch == answer) {
+            System.out.println("Ура Вы угадали, это " + ch);
+        }
+        else {
+            System.out.println("Не угадал");
+        }
+    }
+}
